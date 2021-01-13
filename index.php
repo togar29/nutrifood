@@ -106,7 +106,7 @@ if (!isset($_SESSION)) {
 							<i class="ico-ok ico-color circle-color big"></i>
 							<div class="icons-box-vert-info">
 								<h3>Pengiriman Cepat</h3>
-								<p>Warung Sunda Ibu Nana siap mengirim pesanan anda secara gratis dengan radius maksimal 5 KM.</p>
+								<p>Kami siap mengirim pesanan anda secara gratis dengan radius maksimal 5 KM.</p>
 							</div>
 							<div class="clear"></div>
 						</div>
@@ -118,8 +118,8 @@ if (!isset($_SESSION)) {
 						<div class="icons-box-vert">
 							<i class="ico-cup  ico-white circle-color-full big-color"></i>
 							<div class="icons-box-vert-info">
-								<h3>Rasa Juara</h3>
-								<p>Warung Sunda Ibu Nana memiliki cita rasa yang berbeda dari warung sunda lainnya, di proses higienis dan dari bahan berkualitas.</p>
+								<h3>Rasa Nikmat dan Sehat</h3>
+								<p>Tersedia Makanan Sehat dan Nikmat untuk memenuhi kebutuhan anda</p>
 							</div>
 							<div class="clear"></div>
 						</div>
@@ -140,60 +140,7 @@ if (!isset($_SESSION)) {
 	</div>
 	<!-- end: Wrapper  -->
 
-	<!-- start: Footer Menu -->
-	<div id="footer-menu" class="hidden-tablet hidden-phone">
 
-		<!-- start: Container -->
-		<div class="container">
-
-			<!-- start: Row -->
-			<div class="row">
-
-				<!-- start: Footer Menu Logo -->
-				<div class="span2">
-					<div id="footer-menu-logo">
-						<a href="#"><img src="img/logo3.png" alt="logo" /></a>
-					</div>
-				</div>
-				<!-- end: Footer Menu Logo -->
-
-				<!-- start: Footer Menu Links-->
-				<div class="span9">
-
-					<div id="footer-menu-links">
-
-						<ul id="footer-nav">
-
-							<li><a href="#">Free Delivery Max 5 KM</a></li>
-
-							<li><a href="#">Cash On Delivery (COD)</a></li>
-
-							<li><a href="#">Pelayanan Cepat</a></li>
-
-						</ul>
-
-					</div>
-
-				</div>
-				<!-- end: Footer Menu Links-->
-
-				<!-- start: Footer Menu Back To Top -->
-				<div class="span1">
-
-					<div id="footer-menu-back-to-top">
-						<a href="#"></a>
-					</div>
-
-				</div>
-				<!-- end: Footer Menu Back To Top -->
-
-			</div>
-			<!-- end: Row -->
-
-		</div>
-		<!-- end: Container  -->
-
-	</div>
 	<!-- end: Footer Menu -->
 	<?php include "footer.php"; ?>
 

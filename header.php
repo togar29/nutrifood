@@ -28,14 +28,9 @@
 						<div class="nav-collapse collapse">
 							<ul class="nav">
 								<li class="active"><a href="index.php">Home</a></li>
-								<li class="dropdown">
-									<a href="#" class="dropdown-toggle" data-toggle="dropdown">Menu <b class="caret"></b></a>
-									<ul class="dropdown-menu">
-										<li><a href="produk.php">Menu Makanan</a></li>
-									</ul>
+								<li class="active"> <a href="produk.php">Menu </a>
 								</li>
 								<!-- <li><a href="detail.php">Cart</a></li>-->
-								<li><a href="profil.php">About Us</a></li>
 								<li class="dropdown">
 									<a href="#" class="dropdown-toggle" data-toggle="dropdown">Login <b class="caret"></b></a>
 									<ul class="dropdown-menu">

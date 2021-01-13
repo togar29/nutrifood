@@ -6,7 +6,7 @@ session_start();
 
 $username = $_POST['username'];
 $password1 = $_POST['password'];
-$password = sha1($password1);
+$password = $password1;
 
 //$username = mysqli_real_escape_string($username);
 //$password = mysqli_real_escape_string($password);
@@ -35,4 +35,3 @@ if (mysqli_num_rows($q) == 1) {
 } else {
 	header('location:index.php?error=4');
 }
-?>
