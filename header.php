@@ -27,9 +27,8 @@
 						</a>
 						<div class="nav-collapse collapse">
 							<ul class="nav">
-								<li class="active"><a href="index.php">Home</a></li>
-								<li class="active"> <a href="produk.php">Menu </a>
-								</li>
+								<li class=""><a href="index.php">Home</a></li>
+								<li class=""> <a href="produk.php">Menu </a></li>
 								<!-- <li><a href="detail.php">Cart</a></li>-->
 								<li class="dropdown">
 									<a href="#" class="dropdown-toggle" data-toggle="dropdown">Login <b class="caret"></b></a>

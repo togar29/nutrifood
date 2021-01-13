@@ -5,7 +5,7 @@
                                 <i class="glyphicon glyphicon-dashboard"></i> <span>Dashboard</span>
                             </a>
                         </li>
-                          
+
                         <li class="treeview">
                             <a href="#">
                                 <i class="glyphicon glyphicon-link"></i>
@@ -24,9 +24,7 @@
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href="404.php"><i class="fa fa-angle-double-right"></i> Data Pesanan</a></li>
-                                <li><a href="404.php"><i class="fa fa-angle-double-right"></i> Konfirmasi Pembayaran</a></li>
-                                <li><a href="404.php"><i class="fa fa-angle-double-right"></i> Status Pengiriman</a></li>
+                                <li><a href="statustransaksi1.php"><i class="fa fa-angle-double-right"></i> Status Transaksi</a></li>
                             </ul>
                         </li>
 
@@ -52,7 +50,4 @@
                                 <li><a href="404.php"><i class="fa fa-angle-double-right"></i> Laporan Data Customer</a></li>
                             </ul>
                         </li>
-                        </ul>
-                       
-                        
-                        
+                    </ul>
