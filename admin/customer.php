@@ -125,131 +125,101 @@ $_SESSION['start_time'] = time();
                 <!-- Content Header (Page header) -->
                 <section class="content-header">
                     <h1>
-                        Produk
+                        Admin
                         <small>Administrator</small>
                     </h1>
                     <ol class="breadcrumb">
-                        <li><a href="#"><i class="fa fa-dashboard"></i> Produk</a></li>
-                        <li class="active">Input Produk</li>
+                        <li><a href="#"><i class="fa fa-dashboard"></i> Admin</a></li>
+                        <li class="active">Data Admin</li>
                     </ol>
                 </section>
 
                 <!-- Main content -->
                 <section class="content">
-<?php
-if(isset($_POST['input'])){
-$namafolder="gambar_produk/"; //tempat menyimpan file
 
-if (!empty($_FILES["nama_file"]["tmp_name"]))
-{
-	$jenis_gambar=$_FILES['nama_file']['type'];
-        $kode       = $_POST['kode'];
-		$nama       = $_POST['nama'];
-		$jenis      = $_POST['jenis'];
-        $harga      = $_POST['harga'];
-        $keterangan = $_POST['keterangan'];
-        $stok       = $_POST['stok'];
-        
-		
-	if($jenis_gambar=="image/jpeg" || $jenis_gambar=="image/jpg" || $jenis_gambar=="image/gif" || $jenis_gambar=="image/x-png")
-	{			
-		$gambar = $namafolder . basename($_FILES['nama_file']['name']);		
-		if (move_uploaded_file($_FILES['nama_file']['tmp_name'], $gambar)) {
-			$sql="INSERT INTO produk(kode,nama,jenis,harga,keterangan,stok,gambar) VALUES
-            ('$kode','$nama','$jenis','$harga','$keterangan','$stok','$gambar')";
-			$res=mysqli_query($koneksi, $sql) or die (mysqli_error());
-			//echo "Gambar berhasil dikirim ke direktori".$gambar;
-            echo "<script>alert('Data Produk berhasil dimasukan!'); window.location = 'produk.php'</script>";	   
-		} else {
-		   echo "<p>Gambar gagal dikirim</p>";
-		}
-   } else {
-		echo "Jenis gambar yang anda kirim salah. Harus .jpg .gif .png";
-   }
-} else {
-	echo "Anda belum memilih gambar";
-}
-}
-
-
-			?>
+                    <!-- Small boxes (Stat box) -->
+                    <div class="row">
+                    
+              <div class="col-lg-4">
+              <form action='admin.php' method="POST">
+          
+	       <input type='text' class="form-control" style="margin-bottom: 4px;" name='qcari' placeholder='Cari berdasarkan User ID dan Username' required /> 
+           <input type='submit' value='Cari Data' class="btn btn-sm btn-primary" /> <a href='admin.php' class="btn btn-sm btn-success" >Refresh</i></a>
+          	</div>
+              </div>
            <!-- /.row -->
                     <br />
                     <!-- Main row -->
                     <div class="row">
                         <div class="col-lg-12">
-                        <div class="panel panel-success">
+                    <div class="panel panel-success">
                         <div class="panel-heading">
-                        <h3 class="panel-title"><i class="fa fa-user"></i> Input Data Produk </h3> 
+                        <h3 class="panel-title"><i class="fa fa-user"></i> Data Customer </h3> 
                         </div>
                         <div class="panel-body">
-                  <div class="form-panel">
-                      <form class="form-horizontal style-form" action="input-produk.php" method="post" enctype="multipart/form-data" name="form1" id="form1">
-                          <div class="form-group">
-                              <label class="col-sm-2 col-sm-2 control-label">Kode Produk</label>
-                              <div class="col-sm-8">
-                                  <input name="kode" type="text" id="kode" class="form-control" autocomplete="off" placeholder="Auto Number Tidak perlu di isi" readonly="readonly"/>
-                              </div>
-                          </div>
-                          <div class="form-group">
-                              <label class="col-sm-2 col-sm-2 control-label">Nama Produk</label>
-                              <div class="col-sm-3">
-                            <input name="nama" type="text" id="nama" class="form-control" autocomplete="off" placeholder="Nama Produk" autocomplete="off" required />
-                              
-                            </div>
-                          </div>
-                          <div class="form-group">
-                              <label class="col-sm-2 col-sm-2 control-label">Jenis</label>
-							    <div class="col-sm-3">
-                            <select id="jenis" name="jenis" class="form-control" required>
-                            <option value="Makanan">Makanan</option>
-                            <option value="Minuman">Minuman</option>
-                            <option value="Camilan">Camilan</option>
-                            </select>
-                              
-                            </div>
-                             
-                          </div>
-                          <div class="form-group">
-                              <label class="col-sm-2 col-sm-2 control-label">Harga</label>
-                              <div class="col-sm-3">
-                            <input name="harga" type="text" id="harga" class="form-control" autocomplete="off" placeholder="Harga Produk" autocomplete="off" required />
-                              
-                            </div>
-                          </div>
-                          <div class="form-group">
-                              <label class="col-sm-2 col-sm-2 control-label">Keterangan</label>
-                              <div class="col-sm-3">
-                            <input name="keterangan" type="text" id="keterangan" class="form-control" autocomplete="off" placeholder="Keterangan" autocomplete="off" required />
-                              
-                            </div>
-                          </div>
-                          <div class="form-group">
-                              <label class="col-sm-2 col-sm-2 control-label">Stok</label>
-                              <div class="col-sm-3">
-                            <input name="stok" type="text" id="stok" class="form-control" autocomplete="off" placeholder="Stock Produk" autocomplete="off" required />
-                              
-                            </div>
-                          </div>
-                          <div class="form-group">
-                              <label class="col-sm-2 col-sm-2 control-label">Gambar Produk</label>
-                              <div class="col-sm-3">
-                            <input name="nama_file" type="file" id="nama_file" class="form-control" required />
-                              
-                            </div>
-                          </div>
-                          <div class="form-group">
-                              <label class="col-sm-2 col-sm-2 control-label"></label>
-                              <div class="col-sm-10">
-                                  <input type="submit" name="input" value="Simpan" class="btn btn-sm btn-primary" />&nbsp;
-	                              <a href="produk.php" class="btn btn-sm btn-danger">Batal </a>
-                              </div>
-                          </div>
-                      </form>
-                  </div>
-                  </div>
-                  </div>
-          		</div><!-- col-lg-12--> 
+                       <!-- <div class="table-responsive"> -->
+                       <?php
+                                    $kodesaya = $_SESSION['user_id'];
+                                    $query2 = "select * from customer";
+                                    $hasil1 = mysqli_query($koneksi, $query2) or die(mysqli_error());
+                                    ?>
+                                    <table id="example" class="table table-hover table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th>
+                                                    <center>Kode Customer </center>
+                                                </th>
+                                                <th>
+                                                    <center>Nama </center>
+                                                </th>
+                                                <th>
+                                                    <center>Alamat </center>
+                                                </th>
+                                                <th>
+                                                    <center>No Telp </center>
+                                                </th>
+                                                <th>
+                                                    <center>Username </center>
+                                                </th>
+                                                <th>
+                                                    <center>Password </center>
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <?php
+
+                                        while ($data1 = mysqli_fetch_array($hasil1)) { ?>
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <center><?php echo $data1['kd_cus']; ?></center>
+                                                    </td>
+                                                    <td>
+                                                        <center><?php echo $data1['nama']; ?></center>
+                                                    </td>
+                                                    <td>
+                                                        <center><?php echo $data1['alamat']; ?></center>
+                                                    </td>
+                                                    <td>
+                                                        <center><?php echo $data1['no_telp']; ?></center>
+                                                    </td>
+                                                    <td>
+                                                        <center><?php echo $data1['username']; ?></center>
+                                                    </td>
+                                                    <td>
+                                                        <center><?php echo $data1['password']; ?></center>
+                                                    </td>
+                                                </tr>
+                                </div>
+                            <?php
+                                        }
+                            ?>
+                            </tbody>
+                            </table>
+                  <!-- </div>-->
+              </div> 
+              </div>
+            </div><!-- col-lg-12--> 
                     </div><!-- /.row (main row) -->
 
                 </section><!-- /.content -->

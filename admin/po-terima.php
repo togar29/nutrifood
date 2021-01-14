@@ -4,10 +4,7 @@ if (empty($_SESSION['username'])) {
     header('location:../index.php');
 } else {
     include "../conn.php";
-    $cek = mysqli_query($koneksi, "SELECT * FROM custom WHERE status='N'");
-
-    //$jml_data = mysql_num_rows(mysql_query("SELECT * FROM custom WHERE status='N'"));
-
+    $_SESSION['user_id'];
 ?>
     <!DOCTYPE html>
     <html>
@@ -44,7 +41,7 @@ if (empty($_SESSION['username'])) {
     <body class="skin-blue">
         <!-- header logo: style can be found in header.less -->
         <header class="header">
-            <a href="index.html" class="logo">
+            <a href="index.php" class="logo">
                 <!-- Add the class icon to your logo image or logo icon to add the margining -->
                 Administrator
             </a>
@@ -90,11 +87,13 @@ if (empty($_SESSION['username'])) {
                                 ?>
                             <?php } ?>
                             <!-- Menu Body -->
-                            <?php include "menu1.php"; ?>
+                            <?php //include "menu1.php"; 
+                            ?>
                             <!-- Menu Footer-->
                             <li class="user-footer">
+
                                 <div class="pull-right">
-                                    <a href="../logout.php" class="btn btn-default btn-flat" onclick="return confirm ('Apakah Anda Akan Keluar.?');"> Keluar </a>
+                                    <a href="../logout.php" class="btn btn-default btn-flat" onclick="return confirm ('Apakah Anda Akan Keluar.?');"> Exit </a>
                                 </div>
                             </li>
                             </ul>
@@ -111,7 +110,7 @@ if (empty($_SESSION['username'])) {
                     <!-- Sidebar user panel -->
                     <div class="user-panel">
                         <div class="pull-left image">
-                            <img src="<?php echo $_SESSION['gambar']; ?>" class="img-circle" alt="User Image" style="border: 2px solid #3C8DBC;" />
+                            <!--<img src="<?php echo $_SESSION['gambar']; ?>" class="img-circle" alt="User Image" style="border: 2px solid #3C8DBC;" />-->
                         </div>
                         <div class="pull-left info">
                             <p>Selamat Datang,<br /><?php echo $_SESSION['fullname']; ?></p>
@@ -129,7 +128,7 @@ if (empty($_SESSION['username'])) {
                 <!-- Content Header (Page header) -->
                 <section class="content-header">
                     <h1>
-                        Dashboard
+                        PO (Purchase Order)
                         <small>Administrator</small>
                     </h1>
                     <ol class="breadcrumb">
@@ -138,155 +137,64 @@ if (empty($_SESSION['username'])) {
                     </ol>
                 </section>
 
-                <!-- Main content -->
-                <section class="content">
-
-                    <!-- Small boxes (Stat box) -->
-                    <div class="row">
-                        <div class="col-lg-3 col-xs-6">
-                            <!-- small box -->
-                            <?php $tampil = mysqli_query($koneksi, "select * from produk order by kode desc");
-                            $total = mysqli_num_rows($tampil);
-                            ?>
-                            <div class="small-box bg-aqua">
-                                <div class="inner">
-                                    <h3>
-                                        <?php echo "$total"; ?>
-                                    </h3>
-                                    <p>
-                                        Jumlah Produk
-                                    </p>
-                                </div>
-                                <div class="icon">
-                                    <span class="glyphicon glyphicon-tag"></span>
-                                </div>
-                                <a href="produk.php" class="small-box-footer">
-                                    Lihat Detail Produk <span class="glyphicon glyphicon-chevron-right"></span>
-                                </a>
-                            </div>
-                        </div><!-- ./col -->
-                        <div class="col-lg-3 col-xs-6">
-                            <!-- small box -->
-                            <?php $tampil1 = mysqli_query($koneksi, "select * from po_terima order by nopo desc");
-                            $dept = mysqli_num_rows($tampil1);
-                            ?>
-                            <div class="small-box bg-green">
-                                <div class="inner">
-                                    <h3>
-                                        <?php echo "$dept"; ?>
-                                        <!--<sup style="font-size: 20px">%</sup>-->
-                                    </h3>
-                                    <p>
-                                        PO (Purchase Order)
-                                    </p>
-                                </div>
-                                <div class="icon">
-                                    <span class="glyphicon glyphicon-usd"></span>
-                                </div>
-                                <a href="po-terima.php" class="small-box-footer">
-                                    Lihat Detail PO <span class="glyphicon glyphicon-chevron-right"></span>
-                                </a>
-                            </div>
-                        </div><!-- ./col -->
-                        <div class="col-lg-3 col-xs-6">
-                            <!-- small box -->
-                            <?php $tampil2 = mysqli_query($koneksi, "select * from customer order by kd_cus desc");
-                            $pel = mysqli_num_rows($tampil2);
-                            ?>
-                            <div class="small-box bg-yellow">
-                                <div class="inner">
-                                    <h3>
-                                        <?php echo "$pel"; ?>
-                                    </h3>
-                                    <p>
-                                        Customer
-                                    </p>
-                                </div>
-                                <div class="icon">
-                                    <span class="glyphicon glyphicon-user"></span>
-                                </div>
-                                <a href="customer.php" class="small-box-footer">
-                                    Lihat Detail Customer <span class="glyphicon glyphicon-chevron-right"></span>
-                                </a>
-                            </div>
-                        </div><!-- ./col -->
-                        <div class="col-lg-3 col-xs-6">
-                            <?php $tampil3 = mysqli_query($koneksi, "select * from user order by user_id desc");
-                            $user = mysqli_num_rows($tampil3);
-                            ?>
-                            <!-- small box -->
-                            <div class="small-box bg-red">
-                                <div class="inner">
-                                    <h3>
-                                        <?php echo "$user"; ?>
-                                    </h3>
-                                    <p>
-                                        Admin
-                                    </p>
-                                </div>
-                                <div class="icon">
-                                    <span class="glyphicon glyphicon-lock"></span>
-                                </div>
-                                <a href="admin.php" class="small-box-footer">
-                                    Lihat Detail Admin <span class="glyphicon glyphicon-chevron-right"></span>
-                                </a>
-                            </div>
-                        </div><!-- ./col -->
-                    </div><!-- /.row -->
-
-                </section><!-- /.Left col -->
+                <!--sdasdasda -->
                 <!-- right col (We are only adding the ID to make the widgets sortable)-->
-                <section class="col-lg-5 connectedSortable">
-                    <div class="panel panel-default">
+                <section class="col-lg-12 connectedSortable">
+                    <div class="panel panel-info">
                         <div class="panel-heading">
-                            <h3 class="panel-title"><i class="fa fa-user"></i> Data Admin </h3>
+                            <h3 class="panel-title"><span class="glyphicon glyphicon-tag"></span> Transaksi </h3>
                         </div>
                         <div class="panel-body">
                             <!-- <div class="table-responsive"> -->
                             <?php
-                            $query2 = "select * from user order by user_id desc limit 5";
-                            $hasil1 = mysqli_query($koneksi, $query2) or die(mysqli_error());
+                            $kd = $_SESSION['user_id'];
+                            $query3 = "select * from po_terima";
+                            $hasil2 = mysqli_query($koneksi, $query3) or die(mysqli_error());
                             ?>
                             <table id="example" class="table table-hover table-bordered">
                                 <thead>
                                     <tr>
                                         <th>
-                                            <center>No </center>
+                                            <center>ID </center>
                                         </th>
                                         <th>
-                                            <center>Username </center>
+                                            <center>No PO</i></center>
                                         </th>
                                         <th>
-                                            <center>Fullname </center>
+                                            <center>Kode Cust </center>
+                                        </th>
+                                        <th>
+                                            <center>Tanggal </center>
+                                        </th>
+                                        <th>
+                                            <center>Qty </center>
+                                        </th>
+                                        <th>
+                                            <center>Total </center>
                                         </th>
                                     </tr>
                                 </thead>
                                 <?php
-                                $no = 0;
-                                while ($data1 = mysqli_fetch_array($hasil1)) {
-                                    $no++; ?>
+                                while ($data2 = mysqli_fetch_array($hasil2)) { ?>
                                     <tbody>
-                                        <tr>
-                                            <td>
-                                                <center><?php echo $no; ?></center>
-                                            </td>
-                                            <td>
-                                                <center><a href="detail-admin.php?hal=edit&kd=<?php echo $data1['user_id']; ?>"><span class="glyphicon glyphicon-user"></span> <?php echo $data1['username']; ?></a></center>
-                                            </td>
-                                            <td>
-                                                <center><?php echo $data1['fullname']; ?></center>
-                                            </td>
-                                            <!--<td><center><?php
-                                                            /**if($data1['level'] == 'admin'){
-								echo '<span class="label label-success">Admin</span>';
-							}
-                            else if ($data1['level'] == 'superuser' ){
-								echo '<span class="label label-primary">Super User</span>';
-							}
-                            else if ($data1['level'] == 'user' ){
-								echo '<span class="label label-info">User</span>';
-							}**/
-                                                            ?></center></td>-->
+                                        <td>
+                                            <center><?php echo $data2['id']; ?></center>
+                                        </td>
+                                        <td>
+                                            <center><?php echo $data2['nopo']; ?></center>
+                                        </td>
+                                        <td>
+                                            <center><?php echo $data2['kd_cus']; ?></center>
+                                        </td>
+                                        <td>
+                                            <center><?php echo $data2['tanggal']; ?></center>
+                                        </td>
+                                        <td>
+                                            <center><?php echo $data2['qty']; ?></center>
+                                        </td>
+                                        <td>
+                                            <center>Rp. <?php echo number_format($data2['total'], 2, ",", "."); ?></center>
+                                        </td>
                                         </tr>
                         </div>
                     <?php
@@ -295,12 +203,9 @@ if (empty($_SESSION['username'])) {
                     </tbody>
                     </table>
                     <!-- </div>-->
-                    <div class="text-right">
-                        <a href="admin.php" class="btn btn-sm btn-info">Menu Admin <i class="fa fa-arrow-circle-right"></i></a>
-
-                    </div>
                     </div>
                 </section><!-- right col -->
+
         </div><!-- /.row (main row) -->
 
         </section><!-- /.content -->

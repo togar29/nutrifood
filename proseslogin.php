@@ -6,7 +6,7 @@ session_start();
 
 $username = $_POST['username'];
 $password1 = $_POST['password'];
-$password = $password1;
+$password = sha1($password1);
 
 //$username = mysqli_real_escape_string($username);
 //$password = mysqli_real_escape_string($password);

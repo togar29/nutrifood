@@ -89,9 +89,6 @@ $_SESSION['start_time'] = time();
                                 <?php include "menu1.php"; ?>
                                 <!-- Menu Footer-->
                                 <li class="user-footer">
-                                    <div class="pull-left">
-                                        <a href="detail-admin.php?hal=edit&kd=<?php echo $_SESSION['user_id'];?>" class="btn btn-default btn-flat">Profil</a>
-                                    </div>
                                     <div class="pull-right">
                                         <a href="../logout.php" class="btn btn-default btn-flat" onclick="return confirm ('Apakah Anda Akan Keluar.?');"> Keluar </a>
                                     </div>
